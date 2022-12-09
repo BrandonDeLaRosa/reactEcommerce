@@ -13,9 +13,9 @@
 
 /* ------------------------------------------- HEADER ----------------------------- */
 
-.navContainer{
+/* .navContainer{
 
-}
+} */
 
 .navBar{
     /* background-color: aqua; */
@@ -26,10 +26,10 @@
 }
 
 .eCom{
-    padding-left: 5rem ;
-    font-size: 30px;
+    padding-left: 1rem ;
+    font-size: 15px;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: bold;
     color: var(--soft-red);
 }
 .eCom:hover{
@@ -42,10 +42,10 @@
 
 
 .link{
-    padding: 1.3rem 4rem;
+    padding: .8rem 1.1rem;
     border-left: 1px solid ;
-    font-size: 25px;
-    color: var(--soft-gray);
+    font-size: 15px;
+    color: var(--soft-red);
 }
 .link:hover{
     color: var(--soft-red);
@@ -54,22 +54,29 @@
 }
 
 /* ------------------------------------------------ HOME ---------------------- */
-
 .homeContainer{
-    display: flex;
-    padding: 3rem;
+    position: relative;
+    padding: 2rem;
 }
 
 .categoriesContainer{
-    width: 10%;
-    /* border: 1px solid black; */
-    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 0rem 1rem;
+    /* align-items: flex-start; */
+    /* width: 80%; */
 }
-
 .categoriesMenu{
-    /* background-color: aqua; */
     display: flex;
     gap: 1rem;
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+
+.categories{
+    display: flex;
+    flex-direction: column;
 }
 
 .categoriesArrow{
@@ -77,98 +84,91 @@
     background-color: transparent;
 }
 
-.categoriesArrow:hover{
-    color: var(--soft-red);
-}
-
-.categories{
-    display: flex;
-    flex-direction: column;
-    
-}
 
 .category{
     border: none;
     background-color: transparent;
-    margin-left: -1.5rem;
-    font-size: 20px;
     text-align: left;
-}
-.category:hover{
     color: var(--soft-red);
-}
-
-
-
-
-
-
-
-.productsContainer{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
+    font-weight: bold;
+    margin-left: 1rem;
 }
 
 .inputContainer{
-    margin-left: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  /* margin: ; */
 }
 
-.inputName{
-    width: 500px;
-    height: 50px;
-    border: 1px solid var(--soft-gray);  
-    text-align: center;
+.inputSearch{
+    width: 250px;
 }
 
 .searchButton{
-    width: 200px;
-    height: 49px;
-    font-size: 15px;
+    width: 70px;
+    height: 29px;
     border: none;
     background-color: var(--soft-red);
     color: white;
-    font-weight: bolder;
+
 }
-.searchButton:hover{
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px 2px  var(--bright-red);
+
+.productsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+
+ul{
+    margin-left: -2.5rem;
 }
 
 .cardsContainer{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-self: center;
 }
 
 .productCard{
-    border: 1px solid var(--soft-gray);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 370px;
+    justify-content: center;
+    list-style: none;
+    border: 1px solid var(--soft-gray);
+    width: 310px;
+    height: 380px;
     margin: 1rem;
-    border-radius: .5rem;
 }
 
-.listImg{
-    height: 200px;
-    object-fit: contain;
-    padding: 1rem;
+.imgContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-bottom: 1px solid var(--soft-gray);
 }
 
 .listProduct{
-    font-size: 20px;
-    padding: 0rem 1rem;
-    color: var();
+    text-align: center;
+    font-size: 18px;
 }
+.listProductPrice{
+    text-align: left;
+}
+/* ------------------------------- Tablet Size----------- */
 
-.listProduct:hover{
-    color: var(--soft-red);
-}
+@media screen and (min-width: 800px) and (max-width: 1024px){
+
+    .cardsContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: aqua;
+    }
+
+
+}    
+
+

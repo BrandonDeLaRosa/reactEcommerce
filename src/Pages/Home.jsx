@@ -39,6 +39,101 @@ const Home = () => {
                     className='categoriesArrow'
                     onClick={() => setIsVisible(!isVisible)}
                     >
+                    <h6 
+                    style={{
+                        rotate: "180deg",
+                        transition: "1s"
+                    }}>
+                    {isVisible?  
+                    <i class="fa-solid fa-chevron-up"></i>  
+                    : 
+                    <i class="fa-solid fa-chevron-down"></i>}
+                    </h6>
+                </button>
+              </div>
+
+                {isVisible? (
+                    <>
+                    <ul className='categories'>
+                    {
+                        categoriesList.map(category => (
+                            <button className='category' key={category.id}
+                                onClick={() => dispatch(filteredCategoryThunk(category.id))}>
+                                {category.name}
+                            </button>
+                        ))
+                    }
+                </ul>
+                    </>
+                ): (
+                    <>
+                    
+                    </>
+                )
+            }
+            </div>
+
+            <div className='productsContainer'>
+                
+                <div className='inputContainer'>
+                    <form>
+                        <input className='inputSearch' type="text" value={searchByName} onChange={e => setSearchByName(e.target.value)} placeholder="      Search by name" />
+                        <button className='searchButton'
+                            onClick={() => dispatch(byNameThunk(searchByName))}
+                        >
+                            Submit</button>
+                    </form>
+                </div>
+                <ul className='cardsContainer'>
+                    {
+                        products.map(product => (
+                            <li className='productCard'
+                                key={product.id}>
+                                <div className='imgContainer'>
+                                    <img className='listImg' src={product.productImgs[0]} alt="" 
+                                    style={{
+                                        height: "200px",
+                                        objectFit:"contain",
+                                        // widht: "50%"
+                                    }}/> <br />
+                                     {/* <img className='listImg2' src={product.productImgs[1]} alt="" 
+                                      style={{
+                                        height: "200px",
+                                        objectFit:"contain",
+                                        // widht: "50%"
+                                    }}
+                                     /> */}
+                                    
+                                </div>
+                               
+                                <Link to={`/products/${product.id}`}>
+                                    <h3 className='listProduct' >{product.title}</h3>
+                                </Link>
+                                <h3 className='listProductPrice' > <b>Price: </b>${product.price}</h3>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+export default Home;
+
+/*
+
+
+    return (
+        <div className='homeContainer'>
+
+            <div className='categoriesContainer'>
+              <div className='categoriesMenu'>
+                <h4>Categories</h4>
+                <button 
+                    className='categoriesArrow'
+                    onClick={() => setIsVisible(!isVisible)}
+                    >
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
@@ -80,72 +175,23 @@ const Home = () => {
                         products.map(product => (
                             <li className='productCard'
                                 key={product.id}>
-                                <img className='listImg' src={product.productImgs[0]} alt="" />
+                                <div className='imgContainer'>
+                                    <img className='listImg' src={product.productImgs[0]} alt="" />
+                                    {/* <img className='listImg2' src={product.productImgs[1]} alt="" /> *
+                                    </div>
                                
-                                <Link to={`/products/${product.id}`}>
-                                    <h3 className='listProduct' >{product.title}</h3>
-                                </Link>
-                                <h3 className='listProduct' > <b>Price: </b>${product.price}</h3>
-                            </li>
-                        ))
-                    }
-                </ul>
+                                    <Link to={`/products/${product.id}`}>
+                                        <h3 className='listProduct' >{product.title}</h3>
+                                    </Link>
+                                    <h3 className='listProduct' > <b>Price: </b>${product.price}</h3>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
+    
 
-export default Home;
-
-/*
- <div className='homeContainer'>
-            <Row>
-                <Col lg={3}>
-                    <div>
-                        <ul className='categories'>
-                            {
-                                categoriesList.map(category => (
-                                    <button key={category.id}
-                                        onClick={() => dispatch(filteredCategoryThunk(category.id))}>
-                                        {category.name}
-                                    </button>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </Col>
-                <Col lg={9}>
-                
-                        <h1>Home Page</h1>
-                       
-                       <div className='inputContainer'>
-                       <form className="mb-3">
-                            <input className='inputName' type="text" value={searchByName} onChange={e => setSearchByName(e.target.value)}  placeholder="      Search by name"/>
-                            <button className='searchButton'
-                                onClick={() => dispatch(byNameThunk(searchByName))}
-                            >
-                                Submit</button>
-                        </form>
-                       </div>
-                       
-
-                        <Row xs={1} md={2} lg={3} >
-                        {
-                                products.map(product => (
-                                    <Col  className='productCard'
-                                    key={product.id}>
-                                        <img className='listImg' src={product.productImgs[0]} alt="" />
-                                            <Link to={`/products/${product.id}`}>
-                                                <h3 className='listProduct' >{product.title}</h3>
-                                            </Link>
-                                            <h3 className='listProduct' > <b>Price: </b>${product.price}</h3>   
-                                    </Col>
-                                ))
-                            }    
-                        </Row>  
-                        
-                 
-                </Col>
-            </Row>
-        </div>
 */
