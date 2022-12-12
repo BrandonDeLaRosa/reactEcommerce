@@ -38,12 +38,12 @@ const Home = () => {
                 <button 
                     className='categoriesArrow'
                     onClick={() => setIsVisible(!isVisible)}
-                    >
-                    <h6 
                     style={{
                         rotate: "180deg",
                         transition: "1s"
-                    }}>
+                    }}
+                    >
+                    <h6>
                     {isVisible?  
                     <i class="fa-solid fa-chevron-up"></i>  
                     : 
@@ -93,7 +93,7 @@ const Home = () => {
                                     <img className='listImg' src={product.productImgs[0]} alt="" 
                                     style={{
                                         height: "200px",
-                                        objectFit:"contain",
+                                        // objectFit:"contain",
                                         // widht: "50%"
                                     }}/> <br />
                                      {/* <img className='listImg2' src={product.productImgs[1]} alt="" 

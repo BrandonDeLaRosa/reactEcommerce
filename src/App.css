@@ -149,6 +149,10 @@ ul{
     border-bottom: 1px solid var(--soft-gray);
 }
 
+.listImg{
+    padding: 1rem;
+  }
+
 .listProduct{
     text-align: center;
     font-size: 18px;
@@ -165,9 +169,121 @@ ul{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        background-color: aqua;
+        justify-content: center;
+        gap: 3rem;
+        /* background-color: aqua; */
+    }
+    
+    .inputSearch{
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .searchButton{
+        width: 120px;
+        height: 49px;
+        font-size: 18px;
+        position: relative;
+        bottom: 1px;
+        /* font-weight: bolder; */
     }
 
+}    
+
+@media screen and (min-width: 1024px) {
+
+    .eCom{
+        padding-left: 3rem ;
+        font-size: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--soft-red);
+    }
+  
+    .links{
+        display: flex;
+    }
+
+    .link{
+        padding: 1.5rem 3rem;
+        border-left: 1px solid ;
+        font-size: 20px;
+        color: var(--soft-gray);
+    }
+
+    .homeContainer{
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .cardsContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        /* background-color: aqua; */
+    }
+
+    .listImg{
+      padding: 1rem;
+    }
+
+    .productCard{
+        border: 1px solid var(--soft-gray);
+        width: 310px;
+        height: 380px;
+        margin: 0rem;
+    }
+      
+      .inputSearch{
+          width: 500px;
+          height: 50px;
+          font-size: 20px;
+      }
+      
+      .searchButton{
+          width: 120px;
+          height: 49px;
+          position: relative;
+          bottom: 3px;
+          font-weight: bolder;
+      }
+
+      .searchButton:hover{
+        border: 1px solid black;
+        box-shadow: 0px 0px 5px 2px var(--bright-red);
+      }
+
+      .categoriesArrow:hover{
+        color: var(--bright-red);
+        transform: scale(1.1);
+      }
+      
+      .category{
+        color: var(--soft-gray);
+      }
+
+      .category:hover{
+        color: var(--soft-red);
+      }
+}    
+
+@media screen and (min-width: 1540px) {
+
+
+    .cardsContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        /* background-color: aqua; */
+        width: 1616px;
+    }
 
 }    
 
