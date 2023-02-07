@@ -36,7 +36,7 @@ const Home = () => {
 
     // console.log(products);
     // console.log(categoriesList);
-
+    console.log(searchByName);
     // ------------------------- Products Categries-------------------
 
     // const filteredProducts = products.filter(productItem => productItem.category.id === categoriesList.id)

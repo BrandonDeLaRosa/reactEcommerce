@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -45,6 +45,7 @@ const Login = () => {
                     Submit
                 </button>
             </Form>
+            <h3>Don't you have an account? <Link to={"/singin"}>Click Here</Link></h3>
         </div>
     );
 };

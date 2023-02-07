@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const NewUser = () => {
 
@@ -59,6 +60,7 @@ const NewUser = () => {
                     Submit
                 </button>
             </div>
+            <h3>Already have an account?<Link to={"/login"}> CLick Here!</Link></h3>
         </form>
     );
 };

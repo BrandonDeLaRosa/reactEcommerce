@@ -86,7 +86,7 @@ const Products = () => {
                     <h3>Price: </h3>
                     <p className='productText'>${productSelected?.price}</p><br />
                     <div className='addToCart'>
-                        <input className='addInput' type="number" value={rate} onChange={e => setRate(e.target.value)} placeholder="Add" />
+                        <input className='addInput' type="number" value={rate > 0? rate : ""} onChange={e => setRate(e.target.value)} placeholder="Add" />
                         <button className='addBtn' onClick={addToCart}>Add To cart</button>
                     </div><hr />
                 </div>
